@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cek Transaksi - AhsaStore</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="cek-transaksi.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar (Copied from index.html for consistency) -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-gamepad"></i> Ahsa<span>Store</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="/"><i class="fas fa-home"></i> Beranda</a></li>
+                <li><a href="cek-transaksi.html"><i class="fas fa-receipt"></i> Cek Transaksi</a></li>
+            </ul>
+            <div class="right-controls">
+                <div class="theme-toggle">
+                    <button id="theme-toggle-btn">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="mobile-controls">
+                <div class="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Universal Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Main Content -->
+    <main class="check-transaction-section">
+        <div class="section-container">
+            <div class="form-container">
+                <h1 class="page-title">Cek Status Transaksi Anda</h1>
+                <p class="page-subtitle">Masukkan ID Transaksi Anda di bawah ini untuk melihat detail pesanan.</p>
+                <form class="transaction-form" id="transaction-form">
+                    <div class="input-group">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="transaction-id-input" placeholder="Contoh: AHS-123XYZ" required>
+                    </div>
+                    <button type="submit" class="cta-button">Cek Status</button>
+                </form>
+            </div>
+
+            <div id="transaction-result" class="transaction-result-container">
+                <!-- Hasil akan ditampilkan di sini oleh JavaScript -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="section-container">
+            <div class="footer-grid">
+                <div class="footer-column scroll-animate">
+                    <a href="/" class="logo footer-logo">
+                        <i class="fas fa-gamepad"></i> Ahsa<span>Store</span>
+                    </a>
+                    <p class="footer-description">Platform top-up game terpercaya, cepat, dan aman di Indonesia. Nikmati kemudahan bertransaksi untuk semua game favorit Anda.</p>
+                </div>
+                <div class="footer-column scroll-animate">
+                    <h3 class="footer-heading">Tautan</h3>
+                    <ul class="footer-links">
+                        <li><a href="/">Beranda</a></li>
+                        <li><a href="cek-transaksi.html">Cek Transaksi</a></li>
+                        <li><a href="#">Tentang Kami</a></li>
+                        <li><a href="#">Hubungi Kami</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column scroll-animate">
+                    <h3 class="footer-heading">Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Syarat & Ketentuan</a></li>
+                        <li><a href="#">Kebijakan Privasi</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column scroll-animate">
+                    <h3 class="footer-heading">Ikuti Kami</h3>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 AhsaStore. Semua Hak Cipta Dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="common.js" defer></script>
+    <script src="cek-transaksi.js" defer></script>
+</body>
+</html>

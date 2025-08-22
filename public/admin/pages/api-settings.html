@@ -1,0 +1,81 @@
+<!-- API Settings Page Content -->
+<div id="api-settings-container">
+    <div id="api-status-message" class="message" style="display: none;"></div>
+
+    <div class="settings-grid">
+        <!-- Digiflazz Settings Card -->
+        <div class="settings-card">
+            <div class="settings-card-header">
+                <h3>Pengaturan Digiflazz</h3>
+            </div>
+            <form id="digiflazz-settings-form">
+                <div class="settings-card-body">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="digiflazz-username">Username</label>
+                            <input type="text" id="digiflazz-username" name="digiflazzUsername" placeholder="Username Digiflazz Anda">
+                        </div>
+                        <div class="form-group">
+                            <label for="digiflazz-dev-key">Development Key</label>
+                            <input type="password" id="digiflazz-dev-key" name="digiflazzDevelopmentKey" placeholder="Masukkan Development API Key">
+                        </div>
+                        <div class="form-group">
+                            <label for="digiflazz-prod-key">Production Key</label>
+                            <input type="password" id="digiflazz-prod-key" name="digiflazzProductionKey" placeholder="Masukkan Production API Key">
+                        </div>
+                    </div>
+                </div>
+                <div class="settings-card-footer">
+                    <button type="button" id="test-digiflazz-btn" class="btn btn-secondary">
+                        <i class="fas fa-plug"></i>
+                        <span>Tes Koneksi</span>
+                    </button>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-save"></i>
+                        <span>Simpan Pengaturan</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Midtrans Settings Card -->
+        <div class="settings-card">
+            <div class="settings-card-header">
+                <h3>Pengaturan Midtrans</h3>
+            </div>
+            <form id="midtrans-settings-form">
+                <div class="settings-card-body">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="midtrans-client-key">Client Key</label>
+                            <input type="password" id="midtrans-client-key" name="midtransClientKey" placeholder="Masukkan Client Key Midtrans">
+                        </div>
+                        <div class="form-group">
+                            <label for="midtrans-server-key">Server Key</label>
+                            <input type="password" id="midtrans-server-key" name="midtransServerKey" placeholder="Masukkan Server Key Midtrans">
+                        </div>
+                    </div>
+                </div>
+                <div class="settings-card-footer">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-save"></i>
+                        <span>Simpan Pengaturan</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Simple override for this page */
+    .settings-card-footer .btn-secondary {
+        margin-right: auto;
+    }
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+    @media (min-width: 768px) {
+        .form-grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+    }
+</style>

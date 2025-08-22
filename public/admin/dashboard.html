@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Admin Panel</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="admin-dashboard.css">
+</head>
+<body data-theme="light">
+    <div class="admin-container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="brand-logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <div class="brand-text">
+                        <span class="brand-name">Ahsa<span class="store-text">Store</span></span>
+                        <span class="admin-badge">Admin Panel</span>
+                    </div>
+                </div>
+                <button class="sidebar-toggle" id="sidebar-toggle">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <span class="nav-section-title">Main</span>
+                    <ul>
+                        <li class="active">
+                            <a href="#dashboard" data-page="dashboard" data-tooltip="Dashboard">
+                                <i class="fas fa-chart-pie"></i>
+                                <span>Dashboard</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <span class="nav-section-title">Management</span>
+                    <ul>
+                        <li>
+                            <a href="#products" data-page="products" data-tooltip="Manajemen Produk">
+                                <i class="fas fa-box-open"></i>
+                                <span>Produk</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#orders" data-page="orders" data-tooltip="Manajemen Pesanan">
+                                <i class="fas fa-receipt"></i>
+                                <span>Pesanan</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#transactions" data-page="transactions" data-tooltip="Transaksi">
+                                <i class="fas fa-credit-card"></i>
+                                <span>Transaksi</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <span class="nav-section-title">System</span>
+                    <ul>
+                        <li class="has-submenu">
+                            <a href="#" class="dropdown-toggle" data-tooltip="Pengaturan">
+                                <i class="fas fa-cogs"></i>
+                                <span>Pengaturan</span>
+                                <i class="fas fa-chevron-down dropdown-icon"></i>
+                            </a>
+                            <ul class="submenu">
+                                <li><a href="#api-settings" data-page="api-settings"><i class="fas fa-plug"></i>API Settings</a></li>
+                                <li><a href="#banner-settings" data-page="banner-settings"><i class="fas fa-image"></i>Banner Settings</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#logs" data-page="logs" data-tooltip="System Logs">
+                                <i class="fas fa-file-alt"></i>
+                                <span>Logs</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <div class="admin-profile-sidebar">
+                    <img src="https://i.pravatar.cc/40?img=1" alt="Admin Avatar" class="admin-avatar">
+                    <div class="admin-info">
+                        <span class="admin-name">Admin User</span>
+                        <span class="admin-role">Super Admin</span>
+                    </div>
+                </div>
+                <button class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </button>
+            </div>
+        </aside>
+ 
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Top Header -->
+            <header class="main-header">
+                <div class="header-left">
+                    <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <div class="breadcrumb">
+                        <span class="breadcrumb-item">Admin</span>
+                        <i class="fas fa-chevron-right"></i>
+                        <span class="breadcrumb-item active" id="breadcrumb-current">Dashboard</span>
+                    </div>
+                </div>
+                
+                <div class="header-right">
+                    <div class="header-actions">
+                        <!-- Search -->
+                        <div class="search-box">
+                            <i class="fas fa-search"></i>
+                            <input type="text" placeholder="Search anything...">
+                        </div>
+                        
+                        <!-- Notifications -->
+                        <div class="notification-dropdown">
+                            <button class="notification-btn">
+                                <i class="fas fa-bell"></i>
+                                <span class="notification-badge">3</span>
+                            </button>
+                            <div class="notification-menu">
+                                <div class="notification-header">
+                                    <h4>Notifications</h4>
+                                    <span class="mark-all-read">Mark all as read</span>
+                                </div>
+                                <div class="notification-list">
+                                    <div class="notification-item unread">
+                                        <div class="notification-icon">
+                                            <i class="fas fa-shopping-cart"></i>
+                                        </div>
+                                        <div class="notification-content">
+                                            <p>New order received</p>
+                                            <span class="notification-time">2 minutes ago</span>
+                                        </div>
+                                    </div>
+                                    <div class="notification-item">
+                                        <div class="notification-icon">
+                                            <i class="fas fa-user-plus"></i>
+                                        </div>
+                                        <div class="notification-content">
+                                            <p>New user registered</p>
+                                            <span class="notification-time">1 hour ago</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Theme Toggle -->
+                        <button class="theme-toggle" id="theme-toggle">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                        
+                        <!-- Admin Profile -->
+                        <div class="admin-profile-dropdown">
+                            <button class="admin-profile-btn">
+                                <img src="https://i.pravatar.cc/40?img=1" alt="Admin Avatar">
+                                <span class="admin-name">Admin User</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="profile-menu">
+                                <a href="#" class="profile-menu-item">
+                                    <i class="fas fa-user"></i>
+                                    <span>Profile</span>
+                                </a>
+                                <a href="#" class="profile-menu-item">
+                                    <i class="fas fa-cog"></i>
+                                    <span>Settings</span>
+                                </a>
+                                <hr class="profile-menu-divider">
+                                <a href="#" class="profile-menu-item logout-btn">
+                                    <i class="fas fa-sign-out-alt"></i>
+                                    <span>Logout</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+ 
+            <!-- Page Content -->
+            <div class="content-wrapper">
+                <div class="page-header">
+                    <h1 id="page-title">Dashboard Overview</h1>
+                    <div class="page-actions">
+                        <button id="add-product-btn" class="btn btn-primary" style="display: none;">
+                            <i class="fas fa-plus"></i>
+                            <span>Tambah Produk</span>
+                        </button>
+                        <button class="btn btn-secondary">
+                            <i class="fas fa-download"></i>
+                            <span>Export Data</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Loading Spinner -->
+                <div id="content-loader" class="content-loader" style="display: none;">
+                    <div class="spinner"></div>
+                </div>
+
+                <!-- Dynamic Content Area -->
+                <div class="content-body" id="dynamic-content">
+                    <!-- Enhanced Dashboard Content -->
+                    <div class="dashboard-grid">
+                        <!-- Stats Grid -->
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <div class="stat-icon" style="--icon-bg: #e6f7ff; --icon-color: #1890ff;">
+                                    <i class="fas fa-box-open"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <span class="stat-title">Total Produk</span>
+                                    <span class="stat-value">128</span>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon" style="--icon-bg: #fffbe6; --icon-color: #faad14;">
+                                    <i class="fas fa-receipt"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <span class="stat-title">Total Pesanan</span>
+                                    <span class="stat-value">1,248</span>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon" style="--icon-bg: #f6ffed; --icon-color: #52c41a;">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <span class="stat-title">Total Pengguna</span>
+                                    <span class="stat-value">2,456</span>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon" style="--icon-bg: #e6f2ff; --icon-color: #2f54eb;">
+                                    <i class="fas fa-dollar-sign"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <span class="stat-title">Pendapatan (Bulan Ini)</span>
+                                    <span class="stat-value">Rp 12.3M</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Stats Cards -->
+
+                        <!-- Charts Section -->
+                        <div class="charts-section">
+                            <div class="chart-card">
+                                <div class="chart-header">
+                                    <h3>Sales Overview</h3>
+                                    <div class="chart-actions">
+                                        <select class="chart-period">
+                                            <option>Last 7 Days</option>
+                                            <option>Last 30 Days</option>
+                                            <option>Last 90 Days</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="chart-placeholder">
+                                    <i class="fas fa-chart-bar"></i>
+                                    <p>Sales chart will be displayed here</p>
+                                </div>
+                            </div>
+
+                            <div class="chart-card">
+                                <div class="chart-header">
+                                    <h3>User Activity</h3>
+                                    <div class="chart-actions">
+                                        <select class="chart-period">
+                                            <option>Last 7 Days</option>
+                                            <option>Last 30 Days</option>
+                                            <option>Last 90 Days</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="chart-placeholder">
+                                    <i class="fas fa-chart-line"></i>
+                                    <p>User activity chart will be displayed here</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Charts Section -->
+
+                        <!-- Recent Activity -->
+                        <div class="activity-section">
+                            <div class="activity-card">
+                                <div class="activity-header">
+                                    <h3>Recent Activity</h3>
+                                    <a href="#" class="view-all">View All</a>
+                                </div>
+                                <div class="activity-list">
+                                    <div class="activity-item">
+                                        <div class="activity-icon">
+                                            <i class="fas fa-shopping-cart"></i>
+                                        </div>
+                                        <div class="activity-content">
+                                            <h4>New Order Received</h4>
+                                            <p>Order #ORD-001234 has been placed by John Doe</p>
+                                            <span class="activity-time">2 minutes ago</span>
+                                        </div>
+                                    </div>
+                                    <div class="activity-item">
+                                        <div class="activity-icon">
+                                            <i class="fas fa-user-plus"></i>
+                                        </div>
+                                        <div class="activity-content">
+                                            <h4>New User Registered</h4>
+                                            <p>Mary Johnson joined the platform</p>
+                                            <span class="activity-time">1 hour ago</span>
+                                        </div>
+                                    </div>
+                                    <div class="activity-item">
+                                        <div class="activity-icon">
+                                            <i class="fas fa-box"></i>
+                                        </div>
+                                        <div class="activity-content">
+                                            <h4>Product Updated</h4>
+                                            <p>Game "Cyber Nexus" has been updated</p>
+                                            <span class="activity-time">3 hours ago</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Recent Activity -->
+                    </div>
+                    <!-- End Enhanced Dashboard Content -->
+                </div>
+            </div>
+        </main>
+    </div>
+ 
+    <!-- Modal for Add/Edit Product -->
+    <div id="product-modal" class="modal-overlay">
+        <div class="modal-content">
+            <header class="modal-header">
+                <h2 id="modal-title">Tambah Produk</h2>
+                <button id="close-modal-btn" class="close-btn">&times;</button>
+            </header>
+            <div class="modal-body">
+                <form id="product-form">
+                    <input type="hidden" id="product-id" name="id">
+                    <div class="form-group">
+                        <label for="product-name">Nama Produk</label>
+                        <input type="text" id="product-name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="product-developer">Developer</label>
+                        <input type="text" id="product-developer" name="developer" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="product-category">Kategori</label>
+                        <input type="text" id="product-category" name="category" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="product-image">URL Gambar</label>
+                        <input type="text" id="product-image" name="image" placeholder="Contoh: produk.webp" required>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">Simpan</button>
+                        <button type="button" class="btn btn-secondary modal-cancel-btn">Batal</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+ 
+    <div class="overlay" id="overlay"></div>
+    <script src="admin-dashboard.js"></script>
+</body>
+</html>

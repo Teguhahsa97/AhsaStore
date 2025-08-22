@@ -1,0 +1,46 @@
+<!-- Products Management Page Content -->
+<div id="products-page-container">
+    <div class="page-actions" style="justify-content: flex-end; margin-bottom: 1.5rem;">
+        <div class="form-group" style="margin-bottom: 0;">
+            <label for="product-category-filter" style="margin-bottom: 0.5rem;">Filter Kategori:</label>
+            <select id="product-category-filter" class="form-control" style="min-width: 150px; padding: 0.75rem 1rem; border-radius: 8px; border: 1px solid var(--border-color-light); background-color: var(--bg-main-light); color: var(--text-primary-light);">
+                <option value="all">Semua Kategori</option>
+                <!-- Categories will be loaded here by JavaScript -->
+            </select>
+        </div>
+        <button id="sync-products-btn" class="btn btn-primary">
+            <i class="fas fa-sync-alt"></i>
+            <span>Sinkronkan Produk</span>
+        </button>
+    </div>
+
+    <div id="products-status-message" class="message" style="display: none;"></div>
+
+    <div class="card">
+        <div class="card-header">
+            <h3>Daftar Produk</h3>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nama Produk</th>
+                            <th>Developer</th>
+                            <th>Kategori</th>
+                            <th>Status</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="products-table-body">
+                        <!-- Product rows will be loaded here by JavaScript -->
+                        <tr><td colspan="6" style="text-align: center;">Memuat produk...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Note: Styles for .card, .data-table, .status-badge are moved to admin-dashboard.css -->

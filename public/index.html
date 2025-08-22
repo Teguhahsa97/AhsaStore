@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <title>AhsaStore - Platform Top Up Gaming</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <!-- Logo on the left -->
+            <a href="/" class="logo">
+                <i class="fas fa-gamepad"></i> Ahsa<span>Store</span>
+            </a>
+            
+            <!-- Centered Menu -->
+            <ul class="nav-menu">
+                <li><a href="/"><i class="fas fa-home"></i> Beranda</a></li>
+                <li><a href="cek-transaksi.html"><i class="fas fa-receipt"></i> Cek Transaksi</a></li>
+            </ul>
+            
+            <!-- Search and Theme Toggle on the right -->
+            <div class="right-controls">
+                <!-- Search Icon (Desktop) -->
+                <div class="search-container desktop-search">
+                    <button class="search-btn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <!-- Desktop Search Bar -->
+                    <div class="desktop-search-bar" id="desktop-search-bar">
+                        <i class="fas fa-search desktop-search-icon"></i>
+                        <input type="text" placeholder="Cari game..." class="desktop-search-input" id="desktop-search-input">
+                        <div class="search-results" id="desktop-search-results"></div>
+                    </div>
+                </div>
+                
+                <!-- Dark/Light Mode Toggle -->
+                <div class="theme-toggle">
+                    <button id="theme-toggle-btn">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Controls -->
+            <div class="mobile-controls">
+                <!-- Mobile Search Icon -->
+                <button class="mobile-search-toggle" id="mobile-search-toggle">
+                    <i class="fas fa-search"></i>
+                </button>
+                
+                <!-- Mobile Menu Toggle -->
+                <div class="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Universal Overlay -->
+    <div class="overlay" id="overlay"></div>
+    
+    <!-- Mobile Search Bar -->
+    <div class="mobile-search-container" id="mobile-search-container">
+        <div class="mobile-search-wrapper">
+            <div class="mobile-search-input-wrapper">
+                <input type="text" placeholder="Cari game..." class="mobile-search-input" id="mobile-search-input">
+                <div class="search-results" id="mobile-search-results"></div>
+                <button class="mobile-search-btn">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Banner Section -->
+    <section class="banner-section">
+        <div class="banner-slider">
+            <div class="banner-slide active">
+                <img src="bannr1.webp" alt="Banner Top Up Game Gratis Biaya Admin" class="banner-img">
+            </div>
+            <div class="banner-slide">
+                <img src="bannr2.webp" alt="Banner Promo Codes Earlybird" class="banner-img">
+            </div>
+            
+            <!-- Navigation Dots -->
+            <div class="slider-dots">
+                <span class="dot active" data-slide="0"></span>
+                <span class="dot" data-slide="1"></span>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Product Section -->
+    <section class="product-section">
+        <div class="section-container">
+            <h2 class="section-title scroll-animate">PRODUK POPULER</h2>
+            <div id="popular-products-loader" class="loader-container">
+                <div class="spinner"></div><p>Memuat produk populer...</p>
+            </div>
+            <div class="product-grid popular-products-grid scroll-animate">
+                <!-- Produk populer akan dimuat di sini oleh JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- All Products Section -->
+    <section class="all-products-section">
+        <div class="section-container">
+            <h2 class="section-title scroll-animate">SEMUA PRODUK</h2>
+
+            <!-- Category Filters -->
+            <div class="category-filters scroll-animate" id="category-filters">
+                <button class="filter-btn active" data-category="all">Semua</button>
+                <!-- Kategori lain akan dimuat di sini oleh JavaScript -->
+            </div>
+
+            <div class="product-grid all-products-grid scroll-animate" id="all-products-grid">
+                <!-- Semua produk akan dimuat di sini oleh JavaScript -->
+            </div>
+
+
+            <!-- Load More Button -->
+            <div class="load-more-container">
+                <button class="load-more-btn scroll-animate" id="load-more-btn">Tampilkan Lebih Banyak</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="section-container">
+            <div class="footer-grid">
+                <div class="footer-column scroll-animate">
+                    <a href="#" class="logo footer-logo">
+                        <i class="fas fa-gamepad"></i> Ahsa<span>Store</span>
+                    </a>
+                    <p class="footer-description">Platform top-up game terpercaya, cepat, dan aman di Indonesia. Nikmati kemudahan bertransaksi untuk semua game favorit Anda.</p>
+                </div>
+                <div class="footer-column scroll-animate">
+                    <h3 class="footer-heading">Tautan</h3>
+                    <ul class="footer-links">
+                        <li><a href="/">Beranda</a></li>
+                        <li><a href="cek-transaksi.html">Cek Transaksi</a></li>
+                        <li><a href="#">Tentang Kami</a></li>
+                        <li><a href="#">Hubungi Kami</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column scroll-animate">
+                    <h3 class="footer-heading">Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Syarat & Ketentuan</a></li>
+                        <li><a href="#">Kebijakan Privasi</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column scroll-animate">
+                    <h3 class="footer-heading">Ikuti Kami</h3>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 AhsaStore. Semua Hak Cipta Dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="common.js" defer></script>
+    <script src="script.js" defer></script>
+</body>
+</html>

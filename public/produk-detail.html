@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <title>Detail Produk - AhsaStore</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="produk-detail.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar (Sama seperti di index.html) -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <i class="fas fa-gamepad"></i> Ahsa<span>Store</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="/"><i class="fas fa-home"></i> Beranda</a></li>
+                <li><a href="cek-transaksi.html"><i class="fas fa-receipt"></i> Cek Transaksi</a></li>
+            </ul>
+            <div class="right-controls">
+                <div class="search-container desktop-search">
+                    <button class="search-btn"><i class="fas fa-search"></i></button>
+                    <div class="desktop-search-bar" id="desktop-search-bar">
+                        <i class="fas fa-search desktop-search-icon"></i>
+                        <input type="text" placeholder="Cari game..." class="desktop-search-input" id="desktop-search-input">
+                        <div class="search-results" id="desktop-search-results"></div>
+                    </div>
+                </div>
+                <div class="theme-toggle">
+                    <button id="theme-toggle-btn"><i class="fas fa-moon"></i></button>
+                </div>
+            </div>
+            <div class="mobile-controls">
+                <button class="mobile-search-toggle" id="mobile-search-toggle"><i class="fas fa-search"></i></button>
+                <div class="nav-toggle">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="overlay" id="overlay"></div>
+    <div class="mobile-search-container" id="mobile-search-container">
+        <div class="mobile-search-wrapper">
+            <div class="mobile-search-input-wrapper">
+                <input type="text" placeholder="Cari game..." class="mobile-search-input" id="mobile-search-input">
+                <div class="search-results" id="mobile-search-results"></div>
+                <button class="mobile-search-btn"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Icon Produk -->
+    <section class="product-banner-detail">
+        <div class="section-container">
+            <div class="product-banner-content">
+                <img src="ff.webp" alt="Free Fire" class="product-banner-img" id="product-img">
+                <div class="product-banner-info">
+                    <h1 id="product-name">Free Fire</h1>
+                    <p class="product-banner-developer" id="product-developer">Garena</p>
+                    <div class="product-banner-delivery">
+                        <i class="fas fa-bolt"></i>
+                        <span>Pengiriman Instan</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <!-- Konten Utama Halaman Detail Produk -->
+    <main class="product-detail-container">
+        
+
+        <!-- Form Pemesanan dan Detail -->
+        <section class="order-section">
+            <div class="section-container">
+                <div class="order-layout">
+                    <!-- Kolom Kiri: Form -->
+                    <div class="order-form-container">
+                        <!-- Step 1: Masukkan Data Akun -->
+                        <div class="form-step" id="step-1">
+                            <div class="step-header">
+                                <h2 id="step-1-title">Masukkan User ID</h2>
+                            </div>
+                            <div class="step-content">
+                                <div class="input-group">
+                                    <input type="text" id="user-id" placeholder="Masukkan User ID">
+                                </div>
+                                <p class="input-instruction" id="step-1-instruction">Untuk menemukan ID Anda, klik pada ikon karakter. User ID tercantum di bawah nama karakter Anda. Contoh: 12345678.</p>
+                            </div>
+                        </div>
+
+                        <!-- Step 2: Pilih Nominal -->
+                        <div class="form-step" id="step-2">
+                            <div class="step-header">
+                                <h2>Pilih Nominal Top Up</h2>
+                            </div>
+                            <div class="step-content">
+                                <div class="nominal-grid" id="nominal-grid">
+                                    <!-- Nominal akan diisi oleh JavaScript -->
+                                    <div class="skeleton-loader"></div>
+                                    <div class="skeleton-loader"></div>
+                                    <div class="skeleton-loader"></div>
+                                    <div class="skeleton-loader"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 3: Masukkan Nomor WhatsApp -->
+                        <div class="form-step" id="step-whatsapp">
+                            <div class="step-header">
+                                <h2>Masukkan Nomor WhatsApp</h2>
+                            </div>
+                            <div class="step-content">
+                                <div class="input-group">
+                                    <i class="fab fa-whatsapp"></i>
+                                    <input type="tel" id="whatsapp-number" placeholder="Nomor WhatsApp (cth: 0812xxxx)">
+                                </div>
+                                <p class="input-instruction">Opsional: Jika Anda ingin mendapatkan bukti pembayaran, harap isi nomor WhatsApp Anda.</p>
+                                <p class="input-instruction">Pastikan nomor WhatsApp yang Anda masukkan aktif dan dapat dihubungi.</p>
+                            </div>
+                        </div>
+
+                        <button class="buy-now-btn" id="buy-now-btn">
+                            <i class="fas fa-cart-shopping"></i> Beli Sekarang
+                        </button>
+                    </div>
+
+                    <!-- Kolom Kanan: Detail Pesanan -->
+                    <div class="order-summary-container">
+                        <div class="order-summary-card">
+                            <h3>Detail Pesanan</h3>
+                            <div class="summary-item">
+                                <span id="summary-user-id-label">User ID:</span>
+                                <strong id="summary-user-id">-</strong>
+                            </div>
+                            <div class="summary-item">
+                                <span>Harga:</span>
+                                <strong id="summary-price">Rp 0</strong>
+                            </div>
+                            <div class="summary-item" id="summary-discount-row" style="display: none;">
+                                <span>Diskon:</span>
+                                <strong id="summary-discount">Rp 0</strong>
+                            </div>
+                            <hr>
+                            <div class="summary-total">
+                                <span>Total Pembayaran:</span>
+                                <strong id="summary-total">Rp 0</strong>
+                            </div>
+                        </div>
+                        <!-- Step 2: Masukkan Kode Diskon -->
+                        <div class="form-step" id="step-discount">
+                            <div class="step-header">
+                                <h2>Masukkan Kode Diskon (Opsional)</h2>
+                            </div>
+                            <div class="step-content">
+                                <div class="discount-input-group">
+                                    <input type="text" id="discount-code" placeholder="Masukkan kode diskon">
+                                    <button id="apply-discount-btn">Terapkan</button>
+                                </div>
+                                <p id="discount-status" class="input-instruction"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="section-container">
+            <div class="footer-grid">
+                <div class="footer-column scroll-animate">
+                    <a href="#" class="logo footer-logo">
+                        <i class="fas fa-gamepad"></i> Ahsa<span>Store</span>
+                    </a>
+                    <p class="footer-description">Platform top-up game terpercaya, cepat, dan aman di Indonesia. Nikmati kemudahan bertransaksi untuk semua game favorit Anda.</p>
+                </div>
+                <div class="footer-column scroll-animate">
+                    <h3 class="footer-heading">Tautan</h3>
+                    <ul class="footer-links">
+                        <li><a href="/">Beranda</a></li>
+                        <li><a href="cek-transaksi.html">Cek Transaksi</a></li>
+                        <li><a href="#">Tentang Kami</a></li>
+                        <li><a href="#">Hubungi Kami</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column scroll-animate">
+                    <h3 class="footer-heading">Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Syarat & Ketentuan</a></li>
+                        <li><a href="#">Kebijakan Privasi</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column scroll-animate">
+                    <h3 class="footer-heading">Ikuti Kami</h3>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 AhsaStore. Semua Hak Cipta Dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="common.js" defer></script>
+    <script src="produk-detail.js" defer></script>
+</body>
+</html>
